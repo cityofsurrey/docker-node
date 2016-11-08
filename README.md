@@ -1,2 +1,3 @@
 # docker-node
-Docker image for nodejs ready container
+
+Docker image for NodeJS ready container

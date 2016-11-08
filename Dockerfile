@@ -1,8 +1,10 @@
 FROM mhart/alpine-node:7.0.0
 
+ENV NPM_CONFIG_LOGLEVEL info
+
 # Install packages
 RUN apk add --no-cache --update \
-    bash curl git && \
+    bash curl git binutils-gold && \
     rm -rf /var/cache/apk/*
 
 # Install Yarn
