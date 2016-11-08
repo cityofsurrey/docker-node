@@ -4,7 +4,7 @@ ENV NPM_CONFIG_LOGLEVEL info
 
 # Install packages
 RUN apk add --no-cache --update \
-    bash curl git binutils-gold && \
+    bash curl git openssh && \
     rm -rf /var/cache/apk/*
 
 # Install Yarn
