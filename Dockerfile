@@ -1,5 +1,6 @@
 FROM node:7-alpine
 
+ENV TZ=America/Vancouver
 ENV NPM_CONFIG_LOGLEVEL error
 ENV YARN_VERSION 0.21.0
 
@@ -12,5 +13,5 @@ RUN cd /opt/ && \
 ENV PATH $PATH:/opt/yarn/bin/
 
 # Install development packages
-RUN apk add --no-cache --update bash curl git openssh && \
+RUN apk add --no-cache --update bash curl git openssh tzdata && \
     rm -rf /var/cache/apk/*
