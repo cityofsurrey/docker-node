@@ -1,7 +1,6 @@
 FROM node:8.4.0-alpine
 
 ENV NPM_CONFIG_LOGLEVEL error
-# ENV PATH $PATH:/opt/yarn/bin/
 
 # Install development packages
 RUN apk add --no-cache --update bash curl git openssh tzdata && \
