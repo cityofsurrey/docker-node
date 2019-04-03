@@ -1,9 +1,13 @@
-FROM node:11.12.0-alpine
+FROM node:11.13.0
 
 ENV NPM_CONFIG_LOGLEVEL error
 
-# Install development packages
-RUN apk add --no-cache --update bash curl git openssh tzdata
-RUN apk update && apk upgrade && rm -rf /var/cache/apk/*
+# Install dev dependencies
+RUN apt-get update && apt-get install build-essential curl -y
+
+# Fix Debian vulnerabilities
+RUN DEBIAN_FRONTEND=noninteractive && \
+    DEBIAN_PRIORITY=critical && \
+    apt-get -q -y -o "Dpkg::Options::=--force-confold" dist-upgrade
 
 RUN yarn config set ignore-engines true
