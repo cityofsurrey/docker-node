@@ -1,4 +1,4 @@
-FROM node:17.8.0-alpine
+FROM node:18.1.0-alpine
 
 ENV NPM_CONFIG_LOGLEVEL error
 
